@@ -19,11 +19,15 @@ class Db {
 			id: uuid(),
 			...obj,
 		});
-		this.writeDbToFile(this._data);
+		this._writeDbToFile(this._data);
 	}
 
 	getAll() {
 		return this._data;
+	}
+
+	getOne(id) {
+		return this._data.find((obj) => obj.id === id);
 	}
 
 	update(id, newObj) {
@@ -35,15 +39,15 @@ class Db {
 				  }
 				: obj
 		);
-		this.writeDbToFile(this._data);
+		this._writeDbToFile(this._data);
 	}
 
 	delete(id) {
-		this._data = this._data.filter((obj) => obj.id != id);
-		this.writeDbToFile(this._data);
+		this._data = this._data.filter((obj) => obj.id !== id);
+		this._writeDbToFile(this._data);
 	}
 
-	writeDbToFile(data) {
+	_writeDbToFile(data) {
 		writeFile(this.dbFileName, JSON.stringify(data), "utf8");
 	}
 }

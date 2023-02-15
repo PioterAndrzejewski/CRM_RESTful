@@ -1,1 +1,14 @@
-[{"id":"a9113ab7-c988-40ca-9f8d-fdfeb390cce7","name":"ej","mail":"pomidor"},{"id":"71c6c184-4a65-4e1f-bef4-d00bd1715db7","name":"ej","mail":"pomidor"},{"id":"0ace7f9d-3bdc-4468-b2d8-562da088220c","name":"ej","mail":"pomidor"},{"id":"4c1f3d2e-e5af-4005-afce-11916075add0","name":"ej","mail":"pomidor"},{"id":"905bb36b-ea0d-4b6b-9586-f966f43037df","name":"Zmieniony testerek","mail":"pomidor"},{"id":"76166f27-b90f-42f8-ae6c-be06af83a554","name":"ej","mail":"pomidor"},{"id":"d4593398-740e-41e7-a64f-362fb797678b","name":"ej","mail":"pomidor"},{"id":"34d712e5-ea40-4dc5-840e-91096e16e1f5","name":"ej","mail":"pomidor"},{"id":"f457578c-fa6b-4f85-b0f3-98b3848cb656","name":"ej","mail":"pomidor"},{"id":"07c00fbf-2b34-494b-8f40-8ebe24dc6eb8","name":"ej","mail":"pomidor"}]
+[
+  {
+    "id": "a9113ab7-c988-40ca-9f8d-fdfeb390cce7",
+    "name": "ej",
+    "mail": "pomidor",
+    "nextContactAt": "Jutro"
+  },
+  {
+    "id": "71c6c184-4a65-4e1f-bef4-d00bd1715db7",
+    "name": "ej",
+    "mail": "pomidor",
+    "nextContactAt": "Jutro"
+  }
+]

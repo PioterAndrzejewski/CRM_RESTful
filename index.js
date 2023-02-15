@@ -26,14 +26,6 @@ app.set("view engine", "hbs");
 app.use("/", homeRouter);
 app.use("/client", clientRouter);
 
-app.get("/test", (req, res) => {
-	db.create({ name: "ej", mail: "pomidor" });
-	db.update("905bb36b-ea0d-4b6b-9586-f966f43037df", {
-		name: "Zmieniony testerek",
-	});
-	res.json(db.getAll());
-});
-
 app.listen(3000, "0.0.0.0", () => {
 	console.log("Server is listening");
 });

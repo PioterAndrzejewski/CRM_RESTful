@@ -1,0 +1,20 @@
+table {
+    text-align: left;
+}
+
+tr {
+    margin: 2px;
+    background-color: rgb(230, 230, 230);
+}
+
+tr:nth-child(2n) {
+    background-color: rgb(238, 225, 225);
+}
+
+thead tr {
+    background-color: rgb(201, 201, 201);
+}
+
+td, th {
+    padding: 10px
+}
