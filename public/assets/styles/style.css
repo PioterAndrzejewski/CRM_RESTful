@@ -1,4 +1,6 @@
 table {
+    width: 50%;
+    margin: 0 auto;
     text-align: left;
 }
 
@@ -16,5 +18,14 @@ thead tr {
 }
 
 td, th {
-    padding: 10px
+    padding: 10px;
+}
+
+.error {
+    background: #ff866e;
+    color: white;
+    border: 2px solid red;
+    padding: 20px;
+    margin: 10px auto;
+    width: 80%;
 }

@@ -4,22 +4,27 @@ const { join } = require("path");
 
 const { v4: uuid } = require("uuid");
 
+const {Client, ClientRecord} = require('../records/clientRecord')
 class Db {
+
 	constructor(dbFileName) {
 		this.dbFileName = join(__dirname, "../data", dbFileName);
 		this._load();
-	}
+	};
 
 	async _load() {
-		this._data = JSON.parse(await readFile(this.dbFileName));
+		this._data = JSON.parse(await readFile(this.dbFileName)).map(obj => new ClientRecord(obj));
 	}
 
 	async create(obj) {
+		const id = uuid();
 		this._data.push({
-			id: uuid(),
+			id,
 			...obj,
 		});
 		this._writeDbToFile(this._data);
+		return id;
+
 	}
 
 	getAll() {
@@ -27,7 +32,7 @@ class Db {
 	}
 
 	getOne(id) {
-		return this._data.find((obj) => obj.id === id);
+		return this._data.find((obj) => obj.id === id)
 	}
 
 	update(id, newObj) {
@@ -57,3 +62,5 @@ const db = new Db("client.json");
 module.exports = {
 	db,
 };
+
+
