@@ -6,7 +6,6 @@ const {NotFoundError} = require("../utils/error")
 
 const clientRouter = express.Router()
 
-
 clientRouter
 	.get("/", (req, res) => {
 		res.render("client/list-all", {
@@ -15,7 +14,6 @@ clientRouter
 	})
 	.get("/:id", (req, res) => {
 		const client = db.getOne(req.params.id);
-
 		if (!client) {
 			throw new NotFoundError();
 		}
@@ -34,10 +32,18 @@ clientRouter
 		});
 	})
 	.put("/:id", (req, res) => {
+		const client = db.getOne(req.params.id);
+		if (!client) {
+			throw new NotFoundError();
+		}
 		db.update(req.params.id, req.body)
 		res.render('client/modified', {name: req.body.name, id: req.params.id})
 	})
 	.delete("/:id", (req, res) => {
+		const client = db.getOne(req.params.id);
+		if (!client) {
+			throw new NotFoundError();
+		}
 		db.delete(req.params.id);
 		res.render("client/deleted");
 	})
@@ -46,6 +52,9 @@ clientRouter
 	})
 	.get('/form/edit/:id', (req, res) => {
 		const client = db.getOne(req.params.id);
+		if (!client) {
+			throw new NotFoundError();
+		}
 		res.render('client/forms/edit', {client});
 	})
 
@@ -53,4 +62,5 @@ clientRouter
 module.exports = {
 	clientRouter,
 };
+
 

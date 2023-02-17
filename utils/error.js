@@ -4,9 +4,9 @@ class ValidationError extends Error {
     }
 }
 
-class NotFoundError extends Error {
+class NotFoundError extends Error{
     constructor() {
-    super()
+        super()
     }
 }
 
